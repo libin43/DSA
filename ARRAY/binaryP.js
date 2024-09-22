@@ -1,4 +1,4 @@
-const arr = [1,2,3,4,5,6,7,8,9]
+const arr = [1,2,3,4,5,6,7,8,9,10]
 let target = 3
 let start = 0
 let end = arr.length-1
