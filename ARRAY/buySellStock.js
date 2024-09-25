@@ -1,23 +1,15 @@
 const prices = [7,1,5,3,6,4]
 
 function findMaxProfit(prices) {
-    let buyStock = Infinity
-    let sellStock = 0
-    let map = new Map()
-    for(let i=0;i<prices.length;i++ ) {
-        if(prices[i]<buyStock) {
-            buyStock = prices[i]
-        }
-        if(prices[i]>sellStock) {
-            sellStock = prices[i]
+    let profit = 0
+    for(let i=0;i<prices.length;i++) {
+        for(let j=i+1;j<prices.length;j++) {
+            if(prices[j]-prices[i]>profit){  
+                profit = prices[j] - prices[i]
+            }
         }
     }
-    const profit = sellStock - buyStock
-    if(profit > 0) {
-        return profit
-    } else {
-        return 0
-    }
+    return profit
 }
 
 const res = findMaxProfit(prices)
