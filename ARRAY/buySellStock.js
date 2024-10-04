@@ -1,16 +1,19 @@
-const prices = [7,1,5,3,6,4]
+const prices = [7,6,4,3,1]
 
-function findMaxProfit(prices) {
-    let profit = 0
+function maxprofit(prices) {
+    let minBuy = prices[0]
+    let maxprofit = 0
     for(let i=0;i<prices.length;i++) {
-        for(let j=i+1;j<prices.length;j++) {
-            if(prices[j]-prices[i]>profit){  
-                profit = prices[j] - prices[i]
-            }
+        let profit = prices[i] - minBuy
+        if(maxprofit<profit) {
+            maxprofit = profit
+        }
+        if(prices[i]<minBuy){
+            minBuy = prices[i]
         }
     }
-    return profit
+    return maxprofit
 }
 
-const res = findMaxProfit(prices)
-console.log(res);
+const val = maxprofit([7,6,4,3,1])
+console.log(val)
