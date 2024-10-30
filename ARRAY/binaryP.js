@@ -1,25 +1,27 @@
 const arr = [1,2,3,4,5,6,7,8,9,10]
-let target = 3
-let start = 0
-let end = arr.length-1
 
-function find(arr,target){
-    while(start<end){
-        let middle = start + (end - start)/2;
-        middle = Math.floor(middle)
-        if(arr[middle] == target){
-            return middle
-        } 
-        else if(arr[middle] > target){
-            end = middle-1
+
+function BinarySearch(arr, target) {
+    let startIdx = 0
+    let endIdx = arr.length-1
+    while(startIdx<=endIdx){
+        let middleIdx = startIdx + (endIdx - startIdx)/2
+        middleIdx = Math.floor(middleIdx)
+        if(arr[middleIdx] === target) {
+            return arr[middleIdx]
         }
-        else if( arr[middle]<target){
-            start = middle+1
+        else if(arr[middleIdx]< target) {
+            startIdx = middleIdx +1
         }
-        else{
-            return -1
+        else if(arr[middleIdx]> target) {
+            endIdx = middleIdx -1
         }
+        else {
+            return `Not found`
+        }
+
     }
 }
 
-console.log(find(arr,target));
+const res = BinarySearch(arr, 10)
+console.log(res);

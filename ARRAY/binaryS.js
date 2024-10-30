@@ -1,7 +1,7 @@
 const arr = [1,2,3,4,5,6,7,8,9]
 let startIdx = 0
 let endIdx = arr.length-1
-let target = 6
+let target = 1
 
 function find(arr){
     while(startIdx <= endIdx){
