@@ -7,7 +7,7 @@ for(let i=0;i<arr.length;i++){
         arr[j+1] = arr[j]
         j--
     }
-    arr[j+1] = current  
+    arr[j+1] = current
 }
 
 console.log(arr);
