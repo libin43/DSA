@@ -21,15 +21,15 @@ function helper(arr,startIdx,endIdx){
             leftIdx++
             rightIdx--
         }
-        if(arr[leftIdx]<=arr[pivotIdx]){
+        else if(arr[leftIdx]<=arr[pivotIdx]){
             leftIdx++
         }
-        if(arr[rightIdx]>=arr[pivotIdx]){
+        else if(arr[rightIdx]>=arr[pivotIdx]){
             rightIdx--
         }
     }
     swap(arr,rightIdx,pivotIdx)
-    helper(arr,startIdx,rightIdx)
+    helper(arr,startIdx,rightIdx-1)
     helper(arr,leftIdx,endIdx)
 }
 

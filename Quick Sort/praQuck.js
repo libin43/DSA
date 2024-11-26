@@ -15,18 +15,18 @@ function helper(arr, startIdx, endIdx) {
     while(left<=right){
         if(arr[left] > arr[pivot] && arr[right] < arr[pivot]) {
             swap(arr, left, right)
-            // left++
-            // right--
+            left++
+            right--
         }
-        if(arr[left]<= arr[pivot]){
+        else if(arr[left]<= arr[pivot]){
             left++
         }
-        if(arr[right]>= arr[pivot]) {
+        else if(arr[right]>= arr[pivot]) {
             right--
         }
     }
     swap(arr, pivot, right)
-    helper(arr, pivot, right)
+    helper(arr, pivot, right-1)
     helper(arr, left, endIdx)
 }
 
