@@ -121,7 +121,7 @@ class bin{
 
 
 
- findClosest(target){ 
+ findClosest(target){
     let temp = this.root
     let closest = temp.value
     while(temp!=null){

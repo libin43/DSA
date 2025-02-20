@@ -47,9 +47,9 @@ class HashTable{
     const index = this.hash(key)
     const bucket = this.table[index]
     if(bucket){
-        const sameKeyItem = bucket.find(item=>item[0] === key)
+        const sameKeyItem = bucket.find((item)=> item[0]==key)
         if(sameKeyItem){
-            bucket.splice(bucket.indexOf(sameKeyItem),1)
+            bucket.splice(bucket.indexOf(sameKeyItem), 1)
         }
     }
    }
@@ -66,6 +66,7 @@ class HashTable{
 const col = new  HashTable(50)
 col.set('Name','Libin')
 col.set('Mane','Biji')
+col.set('Bun', 'Rocky')
 col.get('Mane')
-col.remove('Mane')
+col.remove('Bun')
 col.display() 

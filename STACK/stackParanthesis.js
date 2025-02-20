@@ -40,7 +40,7 @@ class Stack {
         for(let i =0;i<str.length;i++){
             if(str.charAt(i) == '('||str.charAt(i) =='{' || str.charAt(i)=='['){
                 this.item.push(str.charAt(i))
-                console.log(this.item);
+                // console.log(this.item);
             }
             else{
                 if(
@@ -52,6 +52,8 @@ class Stack {
             }
            
         }
+        console.log(this.item);
+        
         if(this.item.length>0){
             return false
         }
@@ -61,5 +63,5 @@ class Stack {
   
   let St = new Stack(20);
   
-  let str = "()";
+  let str = "([])";
   console.log(St.closingEqual(str))

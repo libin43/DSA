@@ -165,12 +165,13 @@ class BST{
             else if(!root.right){
                 return root.left
             }
-            root.value = this.min(root.right)
-            root.right = this.deleteNode(root.right,root.value)
+            let inOrderSuccessor = this.min(root.right)
+            root.value = inOrderSuccessor.value
+            root.right = this.delete(root.right, inOrderSuccessor.value)
         }
         return root
     }
-    isBST(node = this.root, min = null, max= null){
+    isBST(node = this.root, min = null, max= null ){
         if(!node){
             return true
         }

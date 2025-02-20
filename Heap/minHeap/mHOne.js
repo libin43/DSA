@@ -81,6 +81,6 @@ class MinHeap {
 // console.log(heap);
 // console.log("''''''''''''''''''");
 const heap2 = new MinHeap()
-const arr = [25, 15, 6, 80, 45]
+const arr = [5, -1, 2, -30, 0 , 3, 5]
 heap2.buildHeap(arr)
 console.log(heap2.data) // output: [ 6, 15, 25, 80, 45 ]

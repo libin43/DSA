@@ -65,7 +65,7 @@ class preTrie{
             if(!curr) return
         }
 
-        if(!curr.isEnd){
+        if(!curr.isEnd){``
             return
         }
 
@@ -96,6 +96,6 @@ trie.addNode('BALL')
 trie.addNode('BANNER')
 
 
-trie.delete('BALL')
+// trie.delete('BALL')
 console.log(trie.autoComplete('BA'));
 

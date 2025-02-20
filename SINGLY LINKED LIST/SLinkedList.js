@@ -9,6 +9,7 @@ class SLinkedList{
     constructor (){
         this.head = null
         this.tail = null
+        this.obj = {}
     }
 
     addNode (data){
@@ -50,7 +51,7 @@ class SLinkedList{
             this.tail.next = newNode
             this.tail = newNode
             return
-        }
+        } 
         newNode.next = this.temp.next
         this.temp.next = newNode
     }
@@ -84,22 +85,19 @@ class SLinkedList{
         this.head = prev
     }
 
-    removeDuplicate(){
-        let currentNode = this.head;
-        while(currentNode!=null){
-            let successor = currentNode.next;
-
-            while(successor!=null && successor.value == currentNode.value){
-                successor = successor.next;
+    removeDuplicates() {
+        let prev = null
+        let temp = this.head
+        while(temp!=null){
+            if(temp.value in (this.obj)){
+                prev.next = temp.next
+            }else {
+                this.obj[temp.value] = "val"
+                prev = temp
             }
-            if(this.tail == successor){
-                this.tail = currentNode;
-                this.tail.next =null;
-            }
-            currentNode.next = successor;
-            currentNode = successor;
-
+            temp = temp.next
         }
+        this.tail = prev
     }
 
     arrayToList(arr){
@@ -109,7 +107,7 @@ class SLinkedList{
     }
     
     display(){
-        this.temp = this.head
+        this.temp = this.head   
         while(this.temp != null){
             console.log(this.temp.value);
             this.temp = this.temp.next
@@ -143,7 +141,7 @@ List.addNode(90)
 // List.insertAfter(40,100) 
 // List.insertBefore(20,10)
 // List.insertBefore(30,88)
-// List.removeDuplicate()
+List.removeDuplicates()
 // reverse(List.head)
-List.arrayToList([2,3,45,6])
+// List.arrayToList([2,3,45,6])
 List.display()
